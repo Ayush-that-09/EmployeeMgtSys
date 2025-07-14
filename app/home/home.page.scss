@@ -1,0 +1,88 @@
+/* home.page.scss */
+
+ion-content {
+  background: #f9f9f9;
+}
+
+ion-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+
+
+}
+.table-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+ion-content.fullscreen-content {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+ion-grid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+ngx-datatable {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+// ngx-datatable {
+//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+//   border-radius: 6px;
+//   overflow: hidden;
+//   background-color: #ffffff;
+// }
+
+ngx-datatable .datatable-header {
+  background-color: #f1f1f1;
+  font-weight: 600;
+ 
+  font-size: 14px;
+}
+
+ngx-datatable .datatable-body-row {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+ngx-datatable .datatable-row-group {
+  border-top: 1px solid #eaeaea;
+}
+
+ion-button {
+  --border-radius: 4px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  margin-left: 6px;
+}
+.selected-row {
+  background-color: #186eb9 !important;
+  color:#000 !important;
+}
+
+::ng-deep .evenrow {
+  background-color: lightgray;
+}
+
+::ng-deep .odd-row {
+  background-color: white;
+}
+
+
+::ng-deep .selectedrow {
+  background-color: lightblue!important;
+}

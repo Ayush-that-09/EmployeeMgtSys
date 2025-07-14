@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancelDelete()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+ 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+  <h3> Are You Sure You want To delete this item</h3>
+  </ion-col>
+  </ion-row>
+
+
+  <ion-row class="ion-justify content-center ion-margin-top">
+    <ion-col size="6" size-sm="4" class="ion-text-center">
+  <ion-button expand="block" color="danger" (click)="confirmDelete()">Yes</ion-button>
+  </ion-col>
+  <ion-col size="6" size-sm="4" class="ion-text-center">
+  <ion-button expand="block" color="secondary" (click)="cancelDelete()">No</ion-button>
+  </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

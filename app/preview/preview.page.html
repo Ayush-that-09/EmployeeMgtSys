@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" fill="">
+      <ion-back-button defaultHref="/home" color="dark" >back</ion-back-button>
+    </ion-button>
+    <ion-title > Preview Page </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <ion-row class="design" style="color:white ">
+      <ion-col>#</ion-col>
+      <ion-col>Name</ion-col>
+      <ion-col>Email</ion-col>
+      <ion-col>Address</ion-col>
+      <ion-col>Designation</ion-col>
+    </ion-row>
+    <div style="border: 1px solid black">
+    <ion-row  style="border: 1px solid black">
+
+      <ion-col><b>{{selectedRow.id}}</b></ion-col>
+      <ion-col>{{selectedRow.employeeName}}</ion-col>
+      <ion-col>{{selectedRow.email}}</ion-col>
+      <ion-col>{{selectedRow.address}}</ion-col>
+      <ion-col>{{selectedRow.designation}}</ion-col>
+    </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>

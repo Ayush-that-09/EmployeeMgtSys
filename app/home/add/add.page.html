@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ mode== 'add' ?'Add New Employee': 'update New Employee'}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="AddRecord" autocomplete="off" (ngSubmit)="submitForm()">
+    <ion-item>
+      <ion-label position="floating"
+        >Employee Name <span style="color: red">*</span>
+      </ion-label>
+      <ion-input formControlName="employeeName"></ion-input>
+    </ion-item>
+
+    <ion-text
+      color="danger"
+      *ngIf="f['employeeName'].hasError('required') && f['employeeName'].touched"
+    >
+      <p class="ion-padding-start">Name is required.</p>
+    </ion-text>
+
+    <ion-text
+      color="danger"
+      *ngIf="f['employeeName'].hasError('pattern') && f['employeeName'].touched"
+    >
+      <p class="ion-padding-start">Only alphabets are allowed.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating"
+        >Email <span style="color: red">*</span>
+      </ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-text
+      color="danger"
+      *ngIf="f['email'].hasError('required') && f['email'].touched"
+    >
+      <p class="ion-padding-start">Email is required</p>
+    </ion-text>
+
+    <ion-text
+      color="danger"
+      *ngIf="f['email'].hasError('email') && f['email'].touched"
+    >
+      <p class="ion-padding-start">Please enter valid email</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating"
+        >Address <span style="color: red">*</span>
+      </ion-label>
+      <ion-input formControlName="address"></ion-input>
+    </ion-item>
+    <ion-text
+      color="danger"
+      *ngIf="f['address'].hasError('required') && f['address'].touched"
+    >
+      <p class="ion-padding-start">Address is required.</p>
+    </ion-text>
+        <ion-text
+      color="danger"
+      *ngIf="f['address'].hasError('pattern') && f['address'].touched"
+    >
+      <p class="ion-padding-start">Only alpaNumeric are allowed.</p>
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating"
+        >Designation <span style="color: red">*</span>
+      </ion-label>
+      <ion-input formControlName="designation"></ion-input>
+    </ion-item>
+    <ion-text
+      color="danger"
+      *ngIf="f['designation'].hasError('required') && f['designation'].touched"
+    >
+      <p class="ion-padding-start">Designation is required.</p>
+    </ion-text>
+   <ion-text
+   color="danger"
+   *ngIf="f['designation'].hasError('pattern') && f['designation'].touched">
+   <p class="ion-padding-start">Only Alphabates Are Allowed</p>
+   </ion-text>
+    <ion-button expand="block" class="ion-margin-top" type="submit">
+      {{mode === 'add' ? 'Create' : 'Update'}}
+    </ion-button>
+  </form>
+</ion-content>

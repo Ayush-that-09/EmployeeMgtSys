@@ -1,0 +1,80 @@
+<ion-header mode="ios">
+  <ion-toolbar color="secondary">
+     <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Employee Records</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" class="fullscreen-content" >
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-margin-bottom">
+      <ion-col size="12" size-md="3">
+        <h2 style="margin: 0; font-size: 1.4rem">Employee Directory</h2>
+      </ion-col>
+      <ion-col size="12" size-md="5">
+        <ion-searchbar
+          placeholder="Search Records Here...."
+          animated="true"
+          (ionInput)="filterEmployees($event)"
+        >
+        </ion-searchbar>
+      </ion-col>
+      <ion-col size="12" size-md="4" class="ion-text-end">
+        <ion-button color="primary" (click)="addEmployee()">+ Add</ion-button>
+        <ion-button color="warning" (click)="editEmployee()">
+         ! Update</ion-button
+        >
+        <ion-button color="danger" (click)="deleteEmployee()"
+          >x Delete</ion-button
+        >
+      </ion-col>
+    </ion-row>
+
+    <ngx-datatable
+      class="material"
+      [rows]="rows"
+      [loadingIndicator]="loadingIndicator"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="50"
+      [scrollbarH]="true"
+      [limit]="10"
+      [rowClass]="getRowClass"
+      (activate)="onActivate($event)"
+    >
+      <ngx-datatable-column 
+        name= "ID"
+        prop="id"
+        [sortable]="true"
+        [canAutoResize]="false"
+        [width]="50"
+      > 
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Name" prop="employeeName" [sortable]="true">
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Email" prop="email" [sortable]="true">
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Address" prop="address" [sortable]="true">
+      </ngx-datatable-column>
+
+      <ngx-datatable-column
+        name="Designation"
+        prop="designation"
+        [sortable]="true"
+      >
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </ion-grid>
+  
+   <ion-button size="12" size-sm="6"  (click)="goToPreviewPage()">Go To Preview</ion-button>
+</ion-content>
+
+
+
+ 
